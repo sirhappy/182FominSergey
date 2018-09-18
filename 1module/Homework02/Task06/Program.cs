@@ -19,13 +19,6 @@ namespace Task06
             while (!int.TryParse(Console.ReadLine(), out a));
             return a;
         }
-        public static double ReadDouble(string msg = "Введите вещественное число: ")
-        {
-            double a;
-            do Console.Write(msg);
-            while (!double.TryParse(Console.ReadLine(), out a));
-            return a;
-        }
 
         static void Main(string[] args)
         {
@@ -35,17 +28,11 @@ namespace Task06
                 int y = ReadInt("Введите координату y: ");
                 int r = 10, d = x * x + y * y;
                 if (d < r * r)
-                {
                     Console.WriteLine("Точка лежит внутри круга");
-                }
                 else if (d == r * r)
-                {
                     Console.WriteLine("Точка лежит на границе круга");
-                }
                 else
-                {
                     Console.WriteLine("Точка лежит за пределами круга");
-                }
 
                 Console.WriteLine("Нажмите ESC для выхода программы. Для повторного запуска - любую другую клавишу");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
