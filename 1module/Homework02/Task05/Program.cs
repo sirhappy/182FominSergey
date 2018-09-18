@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Группа: БПИ182-2
+ * Студент: Фомин Сергей Дмитриевич
+ * Дата: 18.09.2018
+ * Вариант: -
+ * Задача: трёхзначное число по цифрам в столбик
+*/
+
+using System;
 
 namespace Task05
 {
