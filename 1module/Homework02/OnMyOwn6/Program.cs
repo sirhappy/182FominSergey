@@ -29,8 +29,12 @@ namespace OnMyOwn6
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             do
             {
+                double x = ReadDouble("Введите размер бюджета: ");
+                int p = ReadInt("Введите процент, выделенный на компьютерные игры: ");
+                Console.WriteLine($"Выделено {(x * p / 100).ToString("C")} на компьютерные игры");
 
                 Console.WriteLine("Нажмите ESC для выхода программы. Для повторного запуска - любую другую клавишу");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
