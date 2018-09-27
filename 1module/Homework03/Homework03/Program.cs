@@ -7,12 +7,12 @@ using System;
 namespace Homework03
 {
     /// <summary>
-    /// Найти квадратный корень с максимальной точностью 
+    ///     Найти квадратный корень с максимальной точностью
     /// </summary>
-    class Program
+    internal class Program
     {
         /// <summary>
-        /// Метод, считывающий вещественное число
+        ///     Метод, считывающий вещественное число
         /// </summary>
         /// <param name="showingString">Строка, выводащаяся на экран перед считыванием числа</param>
         /// <returns>Число, введённое пользователем</returns>
@@ -25,20 +25,16 @@ namespace Homework03
                 Console.Write(showingString);
 
                 if (double.TryParse(Console.ReadLine(), out result))
-                {
                     isCorrect = true;
-                }
                 else
-                {
                     Console.WriteLine("Неверный формат числа!");
-                }
             } while (!isCorrect);
 
             return result;
         }
 
         /// <summary>
-        /// Метод, вычисляющий приближённое значение квадратного корня
+        ///     Метод, вычисляющий приближённое значение квадратного корня
         /// </summary>
         /// <param name="x">подкоренное значение</param>
         /// <param name="n">основание</param>
@@ -55,19 +51,15 @@ namespace Homework03
             return result;
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             do
             {
                 double input = ReadDouble("Введите число, корень которого следует найти: ");
                 if (input >= 0)
-                {
                     Console.WriteLine($"sqrt({input}) = {ApproximateSqrt(input, 2):F6}");
-                }
                 else
-                {
                     Console.WriteLine("Корень из отрицательного числа извлечь невозможно");
-                }
 
                 Console.WriteLine("Для завершения программы нажмите ESC");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
