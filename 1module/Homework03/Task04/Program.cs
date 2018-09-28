@@ -14,15 +14,15 @@ namespace Homework03
         /// <summary>
         ///     Метод, считывающий вещественное число
         /// </summary>
-        /// <param name="showingString">Строка, выводащаяся на экран перед считыванием числа</param>
+        /// <param name="message">Строка, выводащаяся на экран перед считыванием числа</param>
         /// <returns>Число, введённое пользователем</returns>
-        public static double ReadDouble(string showingString = "Введите вещественное число: ")
+        public static double ReadDouble(string message = "Введите вещественное число: ")
         {
             double result;
             bool isCorrect = false;
             do
             {
-                Console.Write(showingString);
+                Console.Write(message);
 
                 if (double.TryParse(Console.ReadLine(), out result))
                     isCorrect = true;
