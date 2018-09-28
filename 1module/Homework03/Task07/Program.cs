@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Группа: БПИ182-2
+// Студент: Фомин Сергей
+// Задача: 7
+
+using System;
 
 namespace Task07
 {
