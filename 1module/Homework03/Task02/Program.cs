@@ -6,6 +6,9 @@ using System;
 
 namespace Task02
 {
+    /// <summary>
+    ///     Задача: написать метод, разворачивающий число
+    /// </summary>
     internal class Program
     {
         /// <summary>
