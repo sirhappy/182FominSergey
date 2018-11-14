@@ -10,7 +10,10 @@ namespace Task06
     {
         static void Main(string[] args)
         {
-
+            int[] a = new int[3] { 1, 2, 3123132 };
+            foreach (byte b in a)
+                Console.WriteLine(b.GetType());
+            Console.ReadLine();
         }
     }
 }

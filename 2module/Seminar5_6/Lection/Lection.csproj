@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{135813CE-11DC-4659-BAC5-85DBAB1ABC2E}</ProjectGuid>
+    <ProjectGuid>{2E94B6FC-10F3-44FE-94DC-A52063A62D10}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task06</RootNamespace>
-    <AssemblyName>Task06</AssemblyName>
+    <RootNamespace>Lection</RootNamespace>
+    <AssemblyName>Lection</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="Library.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
