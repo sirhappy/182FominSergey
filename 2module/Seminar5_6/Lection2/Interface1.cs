@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task06
+namespace Lection2
 {
-    class Program
+    interface Interface1
     {
-        static void Main(string[] args)
-        {
-
-            Console.ReadLine();
-        }
     }
 }

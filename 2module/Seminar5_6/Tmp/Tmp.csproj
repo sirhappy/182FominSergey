@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{93EC84CE-0EE0-4DFE-8076-60D8F01178B8}</ProjectGuid>
+    <ProjectGuid>{FFEBC38F-DE31-4329-ABBA-2FA36340B6FC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lection2</RootNamespace>
-    <AssemblyName>Lection2</AssemblyName>
+    <RootNamespace>Tmp</RootNamespace>
+    <AssemblyName>Tmp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

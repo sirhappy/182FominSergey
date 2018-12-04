@@ -40,7 +40,7 @@ namespace Lection2
             int n = rnd.Next(MinRandomValue, MaxRandomValue + 1);
             MySecondDerivedClass msdc= new MySecondDerivedClass();
             MyDerivedClass derived = new MyDerivedClass();
-            MyBaseClass mybc = (MyDerivedClass)msdc;
+            MyBaseClass mybc = msdc;
             mybc.Print();
             Console.ReadLine();
         }

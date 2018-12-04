@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task06
+namespace Common
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            Console.ReadLine();
         }
     }
 }
