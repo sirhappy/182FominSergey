@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{90AA9E5C-F847-482E-9C23-2CD605F116F9}</ProjectGuid>
+    <ProjectGuid>{32D716F1-BB8C-41FA-A548-501DBF88ABD7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SR3_Fomin_2</RootNamespace>
-    <AssemblyName>SR3_Fomin_2</AssemblyName>
+    <RootNamespace>ConsolePair</RootNamespace>
+    <AssemblyName>ConsolePair</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\NumericLibrary.csproj">
+      <Project>{bde3c55d-1ddd-4fa4-8757-bab4d1b52adb}</Project>
+      <Name>NumericLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

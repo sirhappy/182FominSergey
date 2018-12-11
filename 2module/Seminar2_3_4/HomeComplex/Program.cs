@@ -72,12 +72,36 @@ namespace HomeComplex
     {
         static void Main(string[] args)
         {
-            for (int i = -10; i <= 10; ++i)
-                for (int j = -10; j <= 10; ++j)
+            Complex z = new Complex(-5, -17);
+            Complex[,] m = { { new Complex(10, 11), new Complex(8, -9), new Complex(0, 1), new Complex(1, -5) },
+                             { new Complex(-30, 3), new Complex(1, 11), new Complex(2, -5), z},
+                             { new Complex(21, -14), new Complex(-3, -14), new Complex(3, 4), new Complex(-5, -3) },
+                             { new Complex(4, 0), z, new Complex(4, -4), new Complex(-3, -5)} };
+            int n = 4;
+            for (int i = 0; i < n; ++i)
+            {
+                int[] x = new int[3];
+                int indx = 0;
+                for (int q = 0; q < n; ++q)
+                    if (q != i) x[indx++] = q;
+
+                for (int j = 0; j < n; ++j)
                 {
-                    Complex c = new Complex(i, j);
-                    Console.WriteLine(c);
+                    int[] y = new int[3];
+                    int indy = 0;
+                    for (int q = 0; q < n; ++q)
+                        if (q != j) x[indy++] = q;
+
+                    Complex ans = m[x[0], y[0]] * m[x[1], y[1]] * m[x[2], y[2]]
+                                + m[x[1], y[0]] * m[x[2], y[1]] * m[x[0], y[2]]
+                                + m[x[2], y[0]] * m[x[0], y[1]] * m[x[1], y[2]]
+                                - m[x[2], y[0]] * m[x[1], y[1]] * m[x[2], y[0]]
+                                - m[x[1], y[0]] * m[x[0], y[1]] * m[x[2], y[0]]
+                                - m[x[0], y[0]] * m[x[2], y[1]] * m[x[1], y[0]];
+                    if (Math.Abs(ans.Im) > Double.Epsilon || Math.Abs(ans.Re) > Double.Epsilon)
+                        Console.WriteLine(ans.Im + " " + ans.Re);
                 }
+            }
             Console.ReadLine();
         }
     }

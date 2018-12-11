@@ -92,24 +92,6 @@ namespace SR3_Fomin_2
         }
     }
 
-    class Parser
-    {
-        public static int ReadInt(int minValue, int maxValue, string showMessage, string errorMessage)
-        {
-            int result = 0;
-            bool isCorrect = false;
-            do
-            {
-                Console.Write(showMessage);
-                if (int.TryParse(Console.ReadLine(), out result) && minValue <= result && result <= maxValue)
-                    isCorrect = true;
-                else
-                    Console.WriteLine(errorMessage);
-            } while (!isCorrect);
-            return result;
-        }
-    }
-
     static class Name
     {
         public static string Generate()
