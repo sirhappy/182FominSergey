@@ -5,6 +5,8 @@
 **/
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace University
 {
@@ -81,6 +83,11 @@ namespace University
                 if (i is GoodStudent)
                     if (goodStudent == null || i.Mean < goodStudent.Mean)
                         goodStudent = (GoodStudent)i;
+
+            Student stud = student[0];
+            var s = student.Where(student1 => student1.Rating < stud.Rating).ToList();
+
+
             if (goodStudent == null)
                 Console.WriteLine("Хороших студентов нет :(");
             else Console.WriteLine(goodStudent + "\nСредняя оценка: " + goodStudent.Mean.ToString("F3"));
@@ -97,5 +104,19 @@ namespace University
             for (int i = 0; i < 4; ++i)
                 Console.WriteLine($"На {i + 1} курсе учатся {cnt[i]} студентов");
         }
+    }
+}
+
+abstract class A
+{
+    abstract public void func();
+
+}
+
+class B : A
+{
+    public override void func()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalTest
 {
-    class Parser
+    static class Parser
     {
         public static int ReadInt(int minValue, int maxValue, string showMessage, string errorMessage = "Неверный формат ввода")
         {

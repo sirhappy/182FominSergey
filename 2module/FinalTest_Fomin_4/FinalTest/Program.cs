@@ -42,6 +42,7 @@ namespace FinalTest
                 studentList.PrintWorstGoodStudent();
                 Console.WriteLine();
                 studentList.PrintStudentsCourses();
+                
 
                 Console.WriteLine("Для выхода нажмите ESC");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
