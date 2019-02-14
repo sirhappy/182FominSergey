@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fomin_SR4_var3", "Fomin_SR4_var3\Fomin_SR4_var3.csproj", "{4EFC7082-F8C1-4627-87B3-C72965064E5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFC7082-F8C1-4627-87B3-C72965064E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFC7082-F8C1-4627-87B3-C72965064E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFC7082-F8C1-4627-87B3-C72965064E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFC7082-F8C1-4627-87B3-C72965064E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A87D179-8471-46D6-A11D-6AB8D1B80128}
+	EndGlobalSection
+EndGlobal

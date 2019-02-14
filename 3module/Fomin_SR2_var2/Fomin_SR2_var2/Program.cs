@@ -11,7 +11,7 @@ namespace Fomin_SR2_var2
         /// <summary>
         ///     Константы для генерации машин
         /// </summary>
-        private const int NumberOfCars = 10;
+        private const int NumberOfCars = 14;
         private const int MinPower = 50;
         private const int MaxPower = 250;
         private const int MinWeight = 900;
