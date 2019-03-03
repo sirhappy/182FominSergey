@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolListEditor", "SchoolListEditor\SchoolListEditor.csproj", "{642CE083-0012-4DEB-AF4D-8243F5E852CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{642CE083-0012-4DEB-AF4D-8243F5E852CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642CE083-0012-4DEB-AF4D-8243F5E852CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642CE083-0012-4DEB-AF4D-8243F5E852CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642CE083-0012-4DEB-AF4D-8243F5E852CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6138F8A9-107E-4E6A-BEC8-D9C0187A1ACC}
+	EndGlobalSection
+EndGlobal
