@@ -8,40 +8,44 @@
 #include <chrono>
 
 
-__global__ void add_OneBlockOneThread(int n, float *x, float *y, float *z)
+__global__ void add_OneBlockOneThread(int n, float *x, float *y)
 {
 	for (int i = 0; i < n; i++)
-		z[i] = x[i] + y[i];
+		y[i] = x[i] + y[i];
 }
 
 
-__global__ void add_OneBlockManyThreads(int n, float *x, float *y, float *z)
+__global__ void add_OneBlockManyThreads(int n, float *x, float *y)
 {
 	int index = threadIdx.x;
 	int stride = blockDim.x;
 	for (int i = index; i < n; i += stride)
-		z[i] = x[i] + y[i];
+		y[i] = x[i] + y[i];
 }
 
-__global__ void add_ManyBlocksManyThreads(int n, float *x, float *y, float *z)
+__global__ void add_ManyBlocksManyThreads(int n, float *x, float *y)
 {
 	int index = blockIdx.x * blockDim.x + threadIdx.x;
 	int stride = blockDim.x * gridDim.x;
 	for (int i = index; i < n; i += stride)
-		z[i] = x[i] + y[i];
+		y[i] = x[i] + y[i];
 }
 
 int main(void)
 {
 
 	int N = 1 << 20; // 1048576 elements
-	float *x, *y, *z;
+	float *x, *y;
 	std::chrono::steady_clock::time_point start, end;
 
-	// Allocate Unified Memory – accessible from CPU or GPU
+	// Allocate Unified Memory â€“ accessible from CPU or GPU
 	cudaMallocManaged(&x, N * sizeof(float));
 	cudaMallocManaged(&y, N * sizeof(float));
-	cudaMallocManaged(&z, N * sizeof(float));
+
+	int numberOfThreads;
+	std::cout << "Input number of threads: ";
+	std::cin >> numberOfThreads;
+	std::cout << std::endl;
 
 	// ========== One block, one thread ========== //
 	for (int i = 0; i < N; i++) {
@@ -50,7 +54,7 @@ int main(void)
 	}
 	start = std::chrono::steady_clock::now();
 
-	add_OneBlockOneThread <<< 1, 1 >>> (N, x, y, z);
+	add_OneBlockOneThread <<< 1, 1 >>> (N, x, y);
 
 	// Wait for GPU to finish before accessing on host
 	cudaDeviceSynchronize();
@@ -65,7 +69,7 @@ int main(void)
 	// ========== One block, many threads ========== //
 	start = std::chrono::steady_clock::now();
 
-	add_OneBlockManyThreads <<< 1, 512 >>> (N, x, y, z);
+	add_OneBlockManyThreads <<< 1, numberOfThreads >>> (N, x, y);
 
 	cudaDeviceSynchronize();
 	end = std::chrono::steady_clock::now();
@@ -80,9 +84,9 @@ int main(void)
 	
 	start = std::chrono::steady_clock::now();
 
-	int blockSize = 512;
+	int blockSize = numberOfThreads;
 	int numBlocks = (N + blockSize - 1) / blockSize;
-	add_ManyBlocksManyThreads <<< numBlocks, blockSize >>> (N, x, y, z);
+	add_ManyBlocksManyThreads <<< numBlocks, blockSize >>> (N, x, y);
 
 	cudaDeviceSynchronize();
 	end = std::chrono::steady_clock::now();
@@ -92,7 +96,6 @@ int main(void)
 	// Free memory
 	cudaFree(x);
 	cudaFree(y);
-	cudaFree(z);
-
+	
 	return 0;
 }
