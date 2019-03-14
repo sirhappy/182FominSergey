@@ -12,7 +12,6 @@ namespace DiscretteHelp
                 for (int j = 0; j < points.Length; ++j)
                 {
                     Console.Write($"{Math.Abs(points[i].X - points[j].X) + Math.Abs(points[i].Y - points[j].Y)} ");
-
                 }
             Console.ReadKey();
         }

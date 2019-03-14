@@ -25,7 +25,7 @@ namespace LectionFiles
             Console.WriteLine(Directory.GetCurrentDirectory());
 
             List<string> dict = new List<string>();
-            for (int i = 0; i < 100000000; ++i)
+            for (int i = 0; i < 50000000; ++i)
             {
                 dict.Add($"String for many text {i}");
             }
