@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace SchoolListEditor
 {
@@ -38,28 +40,37 @@ namespace SchoolListEditor
 
             public static ObservableCollection<SchoolForDataGrid> Convert(List<School> schools)
             {
-                ObservableCollection<SchoolForDataGrid> result = new ObservableCollection<SchoolForDataGrid>();
-                foreach(var i in schools)
+                try
                 {
-                    result.Add(new SchoolForDataGrid()
+                    ObservableCollection<SchoolForDataGrid> result = new ObservableCollection<SchoolForDataGrid>();
+                    foreach (var i in schools)
                     {
-                        Name = i.Name,
-                        Adress = i.Location.Adress,
-                        Okrug = i.Location.Okrug,
-                        Rayon = i.Location.Rayon,
-                        Form_of_incorporation = i.Form_of_incorporation,
-                        Submission = i.Submission,
-                        Tip_uchrezhdeniya = i.Tip_uchrezhdeniya,
-                        Vid_uchrezhdeniya = i.Vid_uchrezhdeniya,
-                        Telephone = i.Telephone,
-                        Web_site = i.Web_site,
-                        E_mail = i.E_mail,
-                        X = i.X,
-                        Y = i.Y,
-                        Global_id = i.Global_id
-                    });
+                        result.Add(new SchoolForDataGrid()
+                        {
+                            Name = i.Name,
+                            Adress = i.Location.Adress,
+                            Okrug = i.Location.Okrug,
+                            Rayon = i.Location.Rayon,
+                            Form_of_incorporation = i.Form_of_incorporation,
+                            Submission = i.Submission,
+                            Tip_uchrezhdeniya = i.Tip_uchrezhdeniya,
+                            Vid_uchrezhdeniya = i.Vid_uchrezhdeniya,
+                            Telephone = i.Telephone,
+                            Web_site = i.Web_site,
+                            E_mail = i.E_mail,
+                            X = i.X,
+                            Y = i.Y,
+                            Global_id = i.Global_id
+                        });
+                    }
+                    schools.Clear();
+                    return result;
                 }
-                return result;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return null;
             }
         }
     }

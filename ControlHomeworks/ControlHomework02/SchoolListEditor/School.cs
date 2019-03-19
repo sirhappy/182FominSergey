@@ -4,6 +4,7 @@
     {
         public class School
         {
+            public int ROWNUM { get; set; }
 
             public string Name { get; set; }
 
@@ -26,7 +27,7 @@
             public string X { get; set; }
 
             public string Y { get; set; }
-
+            
             public string Global_id { get; set; }
         }
         public class Disposition

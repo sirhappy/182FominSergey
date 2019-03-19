@@ -8,17 +8,51 @@
         Title="MainWindow" Height="720" Width="1080" MinHeight="720" MinWidth="1080">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <Button Width="120" Height="90" Margin ="10,10,10,0" x:Name="loadCSVButton" Click="LoadCSVButton_Click">Загрузить CSV</Button>
-        </StackPanel>
-        <DataGrid x:Name="mainDataGrid" Grid.Column="1">
+        <Menu Height="25" VerticalAlignment="Top" Grid.Row="0">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть файл" Click="LoadCSVButton_Click"></MenuItem>
+                <MenuItem Header="Сохранить файл" >
+                    <MenuItem Header="перзаписать в текущий файл" Click="SaveHereCSVButton_Click"></MenuItem>
+                    <MenuItem Header="добавить в текущий файл" Click="SaveAddHereCSVButton_Click"></MenuItem>
+                    <MenuItem Header="сохранить в другой файл" Click="SaveThereCSVButton_Click"></MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Выход" x:Name="menuItemExit" Click="MenuItemExit_Click">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Button Width="120" Height="45" Margin ="10,10,10,0" x:Name="loadCSVButton" Click="LoadCSVButton_Click">Загрузить CSV</Button>
+            <Button Width="120" Height="45" Margin ="10,10,10,0" x:Name="saveHereCSVButton" Content="Перезаписать CSV&#xa;в текущий файл" Click="SaveHereCSVButton_Click"></Button>
+            <Button Width="120" Height="45" Margin ="10,10,10,0" x:Name="saveAddHereCSVButton" Content="Добавить CSV&#xa; в текущий файл" Click="SaveAddHereCSVButton_Click"></Button>
+            <Button Width="120" Height="45" Margin ="10,10,10,0" x:Name="saveThereCSVButton" Content="Сохранить CSV&#xa; в другой файл" Click="SaveThereCSVButton_Click"></Button>
             
+            <StackPanel Orientation="Horizontal" Margin ="10,10,10,0">
+                <Label Content="Кол-во отбражаемых строк: "></Label>
+                <TextBox x:Name="textBoxCountOfElements" Width="40" TextChanged="TextBoxCountOfElements_TextChanged"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="10,10,10,0">
+                <Label Margin="10,10,10,0">Тип школ (form__of__incorporation):</Label>
+                <RadioButton GroupName="Incorporation" Content="Все" Checked="RadioButton_Checked" x:Name="radioButtonIncorporationAll" IsChecked="True"/>
+                <RadioButton GroupName="Incorporation" Content="Государственные" Checked="RadioButton_Checked" x:Name="radioButtonIncorporationTrue"/>
+                <RadioButton GroupName="Incorporation" Content="Негосударственные" Checked="RadioButton_Checked" x:Name="radioButtonIncorporationFalse"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Margin="10,10,10,0">Фильтр по submission:</Label>
+                <TextBox Width="auto" Margin="10,0,10,0" x:Name="textBoxSubmission" TextChanged="TextBoxSubmission_TextChanged"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Label Margin="10,10,10,0"></Label>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid x:Name="mainDataGrid" Grid.Column="1" Grid.Row="1">
         </DataGrid>
     </Grid>
 </Window>
