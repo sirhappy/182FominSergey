@@ -38,6 +38,11 @@ namespace SchoolListEditor
 
             public string Global_id { get; set; }
 
+            /// <summary>
+            ///     Отконвертировать для отображения в DataGrid
+            /// </summary>
+            /// <param name="schools"></param>
+            /// <returns></returns>
             public static ObservableCollection<SchoolForDataGrid> Convert(List<School> schools)
             {
                 try

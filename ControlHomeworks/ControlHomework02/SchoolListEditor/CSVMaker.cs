@@ -14,13 +14,12 @@ namespace SchoolListEditor
     public partial class MainWindow
     {
         /// <summary>
-        ///     НЕ ЗАБЫТЬ СДЕЛАТЬ SCHOOLS != NULL
+        ///     Считываем CSV файл
         /// </summary>
         /// <param name="openFileDialog"></param>
         /// <param name="schools"></param>
         public void ReadCSV(FileStream fileStream, List<School> schools)
         {
-            //  var fileStream = openFileDialog.OpenFile();
             try
             {
 
@@ -70,6 +69,11 @@ namespace SchoolListEditor
             }
         }
         
+        /// <summary>
+        ///     Фильтр
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool ObjectFilter(object obj)
         {
             SchoolForDataGrid school = (SchoolForDataGrid)obj;

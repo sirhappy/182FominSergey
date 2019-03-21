@@ -33,12 +33,20 @@ namespace SchoolListEditor
         string path = "";
         public List<School> schools = null;
 
+        /// <summary>
+        ///     Собственно MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             mainDataGrid.ItemsSource = schoolList;
         }
 
+        /// <summary>
+        ///     Загрузить CSV файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadCSVButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -61,6 +69,11 @@ namespace SchoolListEditor
             }
         }
 
+        /// <summary>
+        ///     Изменить количество отображаемых элементов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBoxCountOfElements_TextChanged(object sender, TextChangedEventArgs e)
         {
             itemsToShow = -1;
@@ -69,16 +82,31 @@ namespace SchoolListEditor
             view?.Refresh();
         }
 
+        /// <summary>
+        ///     Отобразить выбранный тип школ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             view?.Refresh();
         }
 
+        /// <summary>
+        ///     Отфильтровать по submission
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBoxSubmission_TextChanged(object sender, TextChangedEventArgs e)
         {
             view?.Refresh();
         }
 
+        /// <summary>
+        ///     Сохранить в текущий CSV файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveHereCSVButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -130,8 +158,18 @@ namespace SchoolListEditor
             }
         }
 
+        /// <summary>
+        ///     Отформатировать для сохранения в CSV
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static string FormatForCSV(string s) => "\"" + s?.Replace("\"", "\"\"") + "\";";
 
+        /// <summary>
+        ///     Добавить в текущий файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveAddHereCSVButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -233,7 +271,6 @@ namespace SchoolListEditor
                 using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Read))
                     ReadCSV(fs, schools);
                 view.Refresh();
-                MessageBox.Show("Успешно сохранено");
             }
             catch (Exception ex)
             {
@@ -241,6 +278,11 @@ namespace SchoolListEditor
             }
         }
 
+        /// <summary>
+        ///     Сохранить в другой файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveThereCSVButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -290,6 +332,11 @@ namespace SchoolListEditor
             }
         }
 
+        /// <summary>
+        ///     Выход
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
