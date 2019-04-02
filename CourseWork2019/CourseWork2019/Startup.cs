@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using CourseWork2019.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CourseWork2019
 {
@@ -31,7 +33,9 @@ namespace CourseWork2019
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<TestContext>(options => options.UseSqlServer(connection));
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

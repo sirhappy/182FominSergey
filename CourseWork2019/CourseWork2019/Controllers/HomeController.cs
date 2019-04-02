@@ -10,9 +10,16 @@ namespace CourseWork2019.Controllers
 {
     public class HomeController : Controller
     {
+        TestContext db;
+
+        public HomeController(TestContext context)
+        {
+            db = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(db.Questions.ToList());
         }
 
         public IActionResult About()
