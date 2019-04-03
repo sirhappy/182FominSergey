@@ -24,7 +24,7 @@ namespace CourseWork2019
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<TestContext>();
+                    var context = services.GetRequiredService<QuizContext>();
                     SampleData.Initialize(context);
                 }
                 catch (Exception ex)

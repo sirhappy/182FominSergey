@@ -8,7 +8,7 @@ namespace CourseWork2019
 {
     public static class SampleData
     {
-        public static void Initialize(TestContext context)
+        public static void Initialize(QuizContext context)
         {
             if (!context.Questions.Any())
             {

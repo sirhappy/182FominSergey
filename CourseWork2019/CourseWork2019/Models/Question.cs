@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace CourseWork2019.Models
 {
@@ -7,7 +7,6 @@ namespace CourseWork2019.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string QuestionContent { get; set; }
- //       public List<string> AnswersList { get; set; }
         public int CorrectAnswer { get; set; }
     }
 }

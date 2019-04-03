@@ -10,9 +10,9 @@ namespace CourseWork2019.Controllers
 {
     public class HomeController : Controller
     {
-        TestContext db;
+        QuizContext db;
 
-        public HomeController(TestContext context)
+        public HomeController(QuizContext context)
         {
             db = context;
         }

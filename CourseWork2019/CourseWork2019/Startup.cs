@@ -34,7 +34,7 @@ namespace CourseWork2019
             });
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<TestContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<QuizContext>(options => options.UseSqlServer(connection));
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
