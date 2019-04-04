@@ -36,6 +36,11 @@ namespace CourseWork2019.Controllers
             return View();
         }
 
+        public IActionResult CreateQuestion()
+        {
+            return CreateQuestion();
+        }
+
         public IActionResult Privacy()
         {
             return View();
