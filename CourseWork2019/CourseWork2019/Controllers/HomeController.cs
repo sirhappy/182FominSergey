@@ -38,7 +38,15 @@ namespace CourseWork2019.Controllers
 
         public IActionResult CreateQuestion()
         {
-            return CreateQuestion();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateQuestion(Question phone)
+        {
+            db.Questions.Add(phone);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

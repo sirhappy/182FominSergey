@@ -36,6 +36,8 @@ namespace CourseWork2019
                 );
                 context.SaveChanges();
             }
+
+            context.Questions.Add(new Question { Name = "<h1> Имя </h1>" });
         }
     }
 }
