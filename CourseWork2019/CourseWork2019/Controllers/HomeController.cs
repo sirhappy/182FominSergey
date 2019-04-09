@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseWork2019.Models;
+using System.Web;
 
 namespace CourseWork2019.Controllers
 {
@@ -42,9 +43,10 @@ namespace CourseWork2019.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateQuestion(Question phone)
+        public async Task<IActionResult> CreateQuestion(Question question)
         {
-            db.Questions.Add(phone);
+            question.QuestionContent = HttpUtility.HtmlDecode(question.QuestionContent);
+            db.Questions.Add(question);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -10,11 +10,23 @@
     </div>
     <div class="form-group">
         <label asp-for="QuestionContent" class="control-label">Содержание вопроса</label>
-        <input type="text" asp-for="QuestionContent" class="form-control" />
+        <textarea rows="10" type="text" asp-for="QuestionContent" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label asp-for="CorrectAnswer" class="control-label">Правильный ответ</label>
-        <input type="number" asp-for="CorrectAnswer" class="form-control" />
+        <input type="text" asp-for="CorrectAnswer" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="WrongAnswer1" class="control-label">Неправильный ответ 1</label>
+        <input type="text" asp-for="WrongAnswer1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="WrongAnswer2" class="control-label">Неправильный ответ 2</label>
+        <input type="text" asp-for="WrongAnswer2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="WrongAnswer3" class="control-label">Неправильный ответ 3</label>
+        <input type="text" asp-for="WrongAnswer3" class="form-control" />
     </div>
     <div class="form-group">
         <input type="submit" value="Send" class="btn btn-default" />

@@ -21,7 +21,7 @@ namespace CourseWork2019
                         {
                             "8", "10", "12", "14", "16"
                         },*/
-                        CorrectAnswer = 2
+                        CorrectAnswer = "2"
                     },
                     new Question
                     {
@@ -31,7 +31,7 @@ namespace CourseWork2019
                         {
                             "1000", "1024", "1048", "8192", "986"
                         },*/
-                        CorrectAnswer = 1
+                        CorrectAnswer = "2"
                     }
                 );
                 context.SaveChanges();

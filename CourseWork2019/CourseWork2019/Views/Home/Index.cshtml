@@ -21,7 +21,7 @@
         {
             <tr>
                 <td>@question.Name</td>
-                <td>@question.QuestionContent</td>
+                <td>@Html.Raw(question.QuestionContent)</td>
                 <td>@question.CorrectAnswer</td>
                 <td><a href="~/Home/@question.Id">Пока что ничего не привязано</a></td>
             </tr>
