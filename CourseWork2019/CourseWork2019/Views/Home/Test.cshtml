@@ -1,0 +1,26 @@
+﻿@{
+    //ViewData["Title"] = "Курсач";
+    //_Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Вопросы</title>
+</head>
+<body>
+    <h3>Вопросы</h3>
+        @foreach (var question in Model)
+        {
+        <table>
+            <tr><th>@question.Name</th></tr>
+            <tr><th>@Html.Raw(question.QuestionContent)</th></tr>
+            <tr><th>@question.CorrectAnswer</th></tr>
+            <tr><th>@question.WrongAnswer1</th></tr>
+            <tr><th>@question.WrongAnswer2</th></tr>
+            <tr><th>@question.WrongAnswer3</th></tr>+
+
+        </table>
+        }
+</body>
+</html>

@@ -20,7 +20,21 @@ namespace CourseWork2019.Controllers
 
         public IActionResult Index()
         {
-            return View(db.Questions.ToList());
+            return View(db.Tests.ToList());
+        }
+
+        [HttpGet]
+        public IActionResult Test(int id)
+        {
+            ViewBag.TestId = id;
+            
+            List<TestQuestion> TestQuestions = db.TestQuestions.Where(t => t.TestId == id).ToList();
+
+            List<int> QuestionsId = TestQuestions.Select(t => t.QuestionId).ToList();
+  
+            List<Question> Questions = db.Questions.Where(t => QuestionsId.Contains(t.Id)).ToList();
+
+            return View(Questions.ToList());
         }
 
         public IActionResult About()

@@ -12,18 +12,14 @@
     <h3>Вопросы</h3>
     <table>
         <tr>
-            <td>Название</td>
-            <td>Вопрос</td>
-            <td>Ответ</td>
-            <td></td>
+            <td>Название Теста</td>
+            <td>Пройти</td>
         </tr>
-        @foreach (var question in Model)
+        @foreach (var test in Model)
         {
             <tr>
-                <td>@question.Name</td>
-                <td>@Html.Raw(question.QuestionContent)</td>
-                <td>@question.CorrectAnswer</td>
-                <td><a href="~/Home/@question.Id">Пока что ничего не привязано</a></td>
+                <td>@test.Name</td>
+                <td><a href="~/Home/Test/@test.Id">Пройти тест</a></td>
             </tr>
         }
     </table>

@@ -37,6 +37,18 @@ namespace CourseWork2019
                 context.SaveChanges();
             }
 
+            if (!context.Tests.Any())
+            {
+                context.Tests.Add(new Test() { Name = "Первый тест" });
+            }
+
+            if (!context.TestQuestions.Any())
+            {
+                context.TestQuestions.AddRange(
+                    new TestQuestion() { TestId = 1, QuestionId = 1 }, 
+                    new TestQuestion() { TestId = 1, QuestionId = 2 });
+            }
+
             context.Questions.Add(new Question { Name = "<h1> Имя </h1>" });
         }
     }
