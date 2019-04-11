@@ -15,11 +15,11 @@
         <table>
             <tr><th>@question.Name</th></tr>
             <tr><th>@Html.Raw(question.QuestionContent)</th></tr>
-            <tr><th>@question.CorrectAnswer</th></tr>
-            <tr><th>@question.WrongAnswer1</th></tr>
-            <tr><th>@question.WrongAnswer2</th></tr>
-            <tr><th>@question.WrongAnswer3</th></tr>+
 
+            @foreach (var i in question.Answers)
+            {
+                <tr><th>@i</th></tr>
+            }
         </table>
         }
 </body>

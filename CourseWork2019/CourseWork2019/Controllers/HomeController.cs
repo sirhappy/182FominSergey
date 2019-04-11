@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseWork2019.Models;
 using System.Web;
+using CourseWork2019.Utilities;
 
 namespace CourseWork2019.Controllers
 {
@@ -28,13 +29,29 @@ namespace CourseWork2019.Controllers
         {
             ViewBag.TestId = id;
             
-            List<TestQuestion> TestQuestions = db.TestQuestions.Where(t => t.TestId == id).ToList();
+            List<TestQuestion> testQuestions = db.TestQuestions.Where(t => t.TestId == id).ToList();
 
-            List<int> QuestionsId = TestQuestions.Select(t => t.QuestionId).ToList();
+            List<int> questionsId = testQuestions.Select(t => t.QuestionId).ToList();
   
-            List<Question> Questions = db.Questions.Where(t => QuestionsId.Contains(t.Id)).ToList();
+            List<Question> questions = db.Questions.Where(t => questionsId.Contains(t.Id)).ToList();
 
-            return View(Questions.ToList());
+            List<ViewQuestion> viewQuestions = new List<ViewQuestion>();
+            foreach (var i in questions)
+            {
+                ViewQuestion viewQuestion = new ViewQuestion();
+                viewQuestion.Id = i.Id;
+                viewQuestion.Name = i.Name;
+                viewQuestion.QuestionContent = i.QuestionContent;
+                List<string> answers = new List<string>();
+                answers.Add(i.CorrectAnswer);
+                answers.Add(i.WrongAnswer1);
+                answers.Add(i.WrongAnswer2);
+                answers.Add(i.WrongAnswer3);
+                viewQuestion.Answers.AddRange(answers.OrderBy(x => RandomClass.Rnd.Next()));
+                viewQuestions.Add(viewQuestion);
+            }
+            
+            return View(viewQuestions);
         }
 
         public IActionResult About()
