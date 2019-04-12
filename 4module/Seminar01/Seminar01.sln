@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seminar01", "Seminar01\Semi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02", "Task02\Task02.csproj", "{94401EC9-92CD-4A8E-B5F3-5ABE573AEDC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSerialization", "LearningSerialization\LearningSerialization.csproj", "{E9488645-1FC8-4320-86E5-83A2521739E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94401EC9-92CD-4A8E-B5F3-5ABE573AEDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94401EC9-92CD-4A8E-B5F3-5ABE573AEDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94401EC9-92CD-4A8E-B5F3-5ABE573AEDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9488645-1FC8-4320-86E5-83A2521739E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9488645-1FC8-4320-86E5-83A2521739E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9488645-1FC8-4320-86E5-83A2521739E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9488645-1FC8-4320-86E5-83A2521739E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
