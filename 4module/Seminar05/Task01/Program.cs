@@ -14,8 +14,21 @@ namespace Task01
 
         public IEnumerator<string[]> GetEnumerator()
         {
+            SortedSet<char> chars = new SortedSet<char>();
+            Dictionary<char, List<string>> dict = new Dictionary<char, List<string>>();
             foreach (var i in array)
-                yield return i;
+            {
+
+                if (dict[i[0]] == null) dict[i[-0]] = new List<string>();
+                dict[i[0]].Add(i);
+            }
+            
+            foreach (var i in dict.Keys)
+            {
+                if (dict[i] != null)
+                    yield return dict[i].ToArray();
+            }
+
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -31,7 +44,9 @@ namespace Task01
             A a = new A();
             foreach (var i in a)
             {
-                Console.WriteLine(a.array);
+                foreach (var j in i)
+                    Console.Write(j + " ");
+                Console.WriteLine();
             }
         }
     }
