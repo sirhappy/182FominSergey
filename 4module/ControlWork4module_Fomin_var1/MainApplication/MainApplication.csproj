@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAB0AE1A-FD4E-4C7F-8898-A7744DD363D6}</ProjectGuid>
+    <ProjectGuid>{F5178262-5BFD-4B68-A53C-074AC5FF7C3E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DataBaseTask2</RootNamespace>
-    <AssemblyName>DataBaseTask2</AssemblyName>
+    <RootNamespace>MainApplication</RootNamespace>
+    <AssemblyName>MainApplication</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,26 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buyer.cs" />
-    <Compile Include="BuyerFactory.cs" />
-    <Compile Include="DataBase.cs" />
-    <Compile Include="DataBaseException.cs" />
-    <Compile Include="Good.cs" />
-    <Compile Include="GoodFactory.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="IEntityFactory.cs" />
-    <Compile Include="Menu.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="SaleFactory.cs" />
-    <Compile Include="Shop.cs" />
-    <Compile Include="ShopFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CWLibrary\CWLibrary.csproj">
+      <Project>{0afe9c80-9fb3-4848-9a19-f6b8d27671b5}</Project>
+      <Name>CWLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,7 +17,7 @@ namespace DataBaseTask2
 
             db.InsertInto(new ShopFactory("Auchan", "Mocsow", "Airport", "Russia", "+78006003020"));
             db.InsertInto(new ShopFactory("Magnit", "Moscow", "Belorusskaya", "Russia", "+78001234560"));
-            
+
             db.InsertInto(new GoodFactory("Pepsi", "Drinks"));
             db.InsertInto(new GoodFactory("3 korochki", "Snacks"));
             db.InsertInto(new GoodFactory("Ohota", "Drinks"));

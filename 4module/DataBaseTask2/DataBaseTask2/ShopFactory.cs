@@ -13,7 +13,7 @@ namespace DataBaseTask2
         private string _name;
 
         private string _city;
-        private string _district;
+        private string _distinct;
         private string _country;
         private string _phoneNumber;
 
@@ -21,11 +21,11 @@ namespace DataBaseTask2
         {
             _name = name;
             _city = city;
-            _district = distinct;
+            _distinct = distinct;
             _country = country;
             _phoneNumber = phoneNumber;
         }
 
-        public Shop Instance => new Shop(_id++, _name, _city, _district, _country, _phoneNumber);
+        public Shop Instance => new Shop(_id++, _name, _city, _distinct, _country, _phoneNumber);
     }
 }
