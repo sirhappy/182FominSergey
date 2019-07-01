@@ -83,7 +83,7 @@ namespace MainApplication
             {
                 dict.MySerialize(serializePath);
             }
-            catch (Exception ex)
+            catch (SerializeException ex)
             {
                 Console.WriteLine("Ошибка при сериализации словаря: " + ex.Message);
             }

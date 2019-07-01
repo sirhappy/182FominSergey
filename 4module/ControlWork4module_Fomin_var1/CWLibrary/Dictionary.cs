@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CWLibrary
@@ -104,9 +105,9 @@ namespace CWLibrary
                     formatter.Serialize(fs, this);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                throw new SerializeException();
             }
         }
 
